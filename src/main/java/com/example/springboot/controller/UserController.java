@@ -2,6 +2,8 @@ package com.example.springboot.controller;
 
 
 import com.example.springboot.entities.User;
+import com.example.springboot.request.HitkLogin;
+import com.example.springboot.response.TokenResponse;
 import com.example.springboot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -25,11 +27,11 @@ public class UserController {
             return "Greetings from Spring Boot";
         }
 
-       /* @GetMapping("/user/{id}")
-        public Optional<User> getBy(@PathVariable(value = "id") int id){
-            return  userservice.(id);
-        }*/
-        @PostMapping("/adduser")
+        @GetMapping("/getuser/{id}")
+        public User getBy(@PathVariable(value = "id") String id){
+            return  userservice.getBy(id);
+        }
+        @PostMapping("/user/adduser")
         public  String create(@RequestBody User aduser){
             return userservice.create(aduser);
         }
@@ -37,7 +39,10 @@ public class UserController {
         public  String update(@RequestBody User aduser){
             return userservice.create(aduser);
         }
-
+        @PostMapping("/user/login")
+        public TokenResponse loginCompany(@RequestBody HitkLogin userlogin) throws Exception {
+            return userservice.login(userlogin);
+        }
     }
 
 
