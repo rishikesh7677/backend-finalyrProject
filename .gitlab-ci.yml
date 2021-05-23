@@ -1,0 +1,16 @@
+# Enginered by: Avinash Kumar<avinash.kumar@hashedin.com> & Satya Kumar <satya.kumar@hashedin.com>
+
+stages:
+  - build
+
+maven-build:
+  image: maven:3-jdk-11
+  stage: build
+  only:
+  - master
+  variables:
+    MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
+  cache:
+    paths:
+      - ./.m2/repository/
+  script: "mvn clean verify package"
