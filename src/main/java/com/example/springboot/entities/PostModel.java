@@ -17,26 +17,26 @@ import java.util.ArrayList;
 public class PostModel {
 
     @Id
-    @GeneratedValue(generator = "uuid")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "post_id")
     private int postid;
     private String title;
     @Column(columnDefinition="text")
-    private  String cotent;
+    private  String content;
     private String image;
     private ArrayList<String> comments;
     private  int likes;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "creator_id" , referencedColumnName = "email")
     private  User user;
-    private LocalDateTime dateTime;
+    private LocalDateTime dateTime=LocalDateTime.now();
 
     public PostModel() {
     }
 
-    public PostModel(String title, String cotent, String image, ArrayList<String> comments, int likes, User user, LocalDateTime dateTime) {
+    public PostModel(String title, String content, String image, ArrayList<String> comments, int likes, User user, LocalDateTime dateTime) {
         this.title = title;
-        this.cotent = cotent;
+        this.content = content;
         this.image = image;
         this.comments = comments;
         this.likes = likes;

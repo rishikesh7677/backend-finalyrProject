@@ -3,6 +3,7 @@ package com.example.springboot.service;
 
 import com.example.springboot.entities.Notice;
 import com.example.springboot.repositary.NoticeRepositary;
+import com.example.springboot.response.MessageResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,5 +28,11 @@ public class NoticeService {
 
     public Notice getbyid(Integer noticeid) {
         return noticeRepositary.findByid(noticeid);
+    }
+
+    public String delnotice(Integer notice_id) {
+
+        noticeRepositary.deleteById(notice_id);
+        return "Deleted SuccessFully";
     }
 }

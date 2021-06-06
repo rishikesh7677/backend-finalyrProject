@@ -18,7 +18,7 @@ import java.util.List;
 
 public class Notice {
     @Id
-    @GeneratedValue(generator = "uuid")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "Notice_id")
     private int id;
     private String title;

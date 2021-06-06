@@ -18,7 +18,7 @@ import java.util.spi.LocaleServiceProvider;
 public class Event {
 
     @Id
-    @GeneratedValue(generator = "uuid")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "event_id")
     private int event_id;
     //@Column(nullable = false)

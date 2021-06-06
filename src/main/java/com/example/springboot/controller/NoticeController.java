@@ -30,5 +30,11 @@ public class NoticeController {
         return noticeService.getbyid(notice_id);
     }
 
+    @DeleteMapping("/notice/delete/{notice_id}")
+    public MessageResponse delnotice(@PathVariable(value = "notice_id") Integer notice_id){
+
+        return  new MessageResponse(noticeService.delnotice(notice_id));
+    }
+
 
 }
