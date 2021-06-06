@@ -3,12 +3,14 @@ package com.example.springboot.controller;
 
 import com.example.springboot.entities.User;
 import com.example.springboot.request.HitkLogin;
+import com.example.springboot.response.MessageResponse;
 import com.example.springboot.response.TokenResponse;
 import com.example.springboot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class UserController {
 
 
@@ -31,9 +33,9 @@ public class UserController {
         public User getBy(@PathVariable(value = "id") String id){
             return  userservice.getBy(id);
         }
-        @PostMapping("/user/adduser")
-        public  String create(@RequestBody User aduser){
-            return userservice.create(aduser);
+        @PostMapping("/auth/register")
+        public MessageResponse create(@RequestBody User aduser){
+            return new MessageResponse( userservice.create(aduser));
         }
         @PutMapping("/updateUser")
         public  String update(@RequestBody User aduser){

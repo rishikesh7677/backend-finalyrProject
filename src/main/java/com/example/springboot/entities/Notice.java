@@ -19,20 +19,20 @@ import java.util.List;
 public class Notice {
     @Id
     @GeneratedValue(generator = "uuid")
-    @Column(name = "user_id")
+    @Column(name = "Notice_id")
     private int id;
     private String title;
+    @Column(columnDefinition="text")
     private String description;
     private String Source;
-    private LocalDateTime Cdate;
+    private LocalDateTime Cdate=LocalDateTime.now();
 
     public Notice() {
     }
 
-    public Notice(String title, String description, String source, LocalDateTime cdate) {
+    public Notice(String title, String description, String source) {
         this.title = title;
         this.description = description;
         Source = source;
-        Cdate = cdate;
     }
 }

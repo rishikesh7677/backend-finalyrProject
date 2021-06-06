@@ -74,7 +74,7 @@ public class UserService implements UserDetailsService {
             throw new Exception("Invalid Email or Password");
         }
 
-        return new TokenResponse( jwtUtil.generateToken(userd.getEmail()) ) ;
+        return new TokenResponse( jwtUtil.generateToken(userd.getEmail()),"user" ) ;
     }
 
 

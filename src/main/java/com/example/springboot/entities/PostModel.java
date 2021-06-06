@@ -18,9 +18,10 @@ public class PostModel {
 
     @Id
     @GeneratedValue(generator = "uuid")
-    @Column(name = "user_id")
+    @Column(name = "post_id")
     private int postid;
     private String title;
+    @Column(columnDefinition="text")
     private  String cotent;
     private String image;
     private ArrayList<String> comments;

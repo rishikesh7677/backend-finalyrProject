@@ -1,33 +1,32 @@
 package com.example.springboot.entities;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.security.PrivateKey;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "comment_tabel")
+@Table(name = "feedback")
 @Data
 @Getter
 @Setter
 @AllArgsConstructor
-public class Comments_tab {
+public class Feedback {
     @Id
     @GeneratedValue(generator = "uuid")
-    @Column(name = "comment_id")
-    private int comment_id;
+    @Column(name = "query_id")
+    private int query_id;
     @Column(columnDefinition="text")
     private  String cotent;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "postid")
-    private PostModel postModel;
-    private LocalDateTime created_at= LocalDateTime.now();
+    private LocalDateTime created_at=LocalDateTime.now();
+    @Column(columnDefinition = "text")
+    private String response;
+    private LocalDateTime response_at;
     @ManyToOne (cascade = CascadeType.ALL)
     @JoinColumn(name = "creator_id")
     private User user;
-
-    }
+}
