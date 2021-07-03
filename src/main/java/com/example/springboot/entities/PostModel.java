@@ -30,7 +30,7 @@ public class PostModel {
     @JoinColumn(name = "creator_id" , referencedColumnName = "email")
     private  User user;
     private LocalDateTime dateTime=LocalDateTime.now();
-
+    private Boolean Is_approved=false;
     public PostModel() {
     }
 

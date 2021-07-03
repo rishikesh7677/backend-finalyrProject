@@ -34,6 +34,7 @@ public class Event {
     @JoinColumn(name = "creator_id")
     private  User user;
     private int likecount;
+    private Boolean Is_approved=false;
 
     public Event() {
     }

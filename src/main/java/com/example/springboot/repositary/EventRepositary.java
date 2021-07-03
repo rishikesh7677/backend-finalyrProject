@@ -11,4 +11,5 @@ public interface EventRepositary extends CrudRepository<Event,Integer> {
 
     @Query("Select row from Event row where row.event_id = :eid")
     Event findByid(@Param("eid") Integer eid);
+
 }

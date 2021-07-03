@@ -26,7 +26,7 @@ public class EventController {
         return eventService.getqllevent();
     }
 
-    @PutMapping("/event/{event_id}")
+    @PutMapping("/updateevent/{event_id}")
     public MessageResponse updateevent(@PathVariable Integer event_id,@RequestBody Event event){
         return  new MessageResponse(eventService.updateevent(event_id,event));
 
