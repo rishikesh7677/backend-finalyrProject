@@ -15,3 +15,7 @@ docker exec -it ContainerID psql -U postgres
 Where ContainerID is the ID you obtain from docker ps command  
 6.	Once psql opens, use this command to create a test database :
  create DATABASE hitk_db;
+
+
+##Integration 
+1.Open every Java file in the cntroller and change the local host link in the Cross origin Annotation
