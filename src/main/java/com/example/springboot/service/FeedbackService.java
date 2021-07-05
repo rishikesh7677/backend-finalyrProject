@@ -1,32 +1,28 @@
 package com.example.springboot.service;
 
-import com.example.springboot.entities.PostModel;
+
+import com.example.springboot.entities.Feedback;
 import com.example.springboot.entities.User;
-import com.example.springboot.repositary.PostRepositary;
+import com.example.springboot.repositary.FeedbackRepositary;
 import com.example.springboot.repositary.UserRepositary;
 import com.example.springboot.util.JwtUtil;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-
-@AllArgsConstructor
 
 @Service
-public class PostService {
-
+public class FeedbackService {
     @Autowired
-    private JwtUtil jwtUtil;
-
-    @Autowired
-    private PostRepositary postRepositary;
+    private FeedbackRepositary feedbackRepositary;
 
     @Autowired
     private UserRepositary userRepositary;
+
+    @Autowired
+    private JwtUtil jwtUtil;
 
     public String getuserEmail(){
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder
@@ -40,16 +36,11 @@ public class PostService {
         return email;
     }
 
-    public String feedpost(PostModel postModel) {
+    public String feedback(Feedback feedback) {
         String email=getuserEmail();
         User user=userRepositary.findByEmail(email);
-        postModel.setUser(user);
-        postRepositary.save(postModel);
-        return  "Posted Successfully";
-    }
-
-    public ArrayList<PostModel> postmodel() {
-
-        return (ArrayList<PostModel>) postRepositary.findAllByapp(Boolean.TRUE);
+        feedback.setUser(user);
+        feedbackRepositary.save(feedback);
+        return "Feedback Posted";
     }
 }

@@ -23,7 +23,7 @@ public class EventController {
 
     @GetMapping("/event/getall")
     public ArrayList<Event> getallevent(){
-        return eventService.getqllevent();
+        return eventService.getallevent();
     }
 
     @PutMapping("/updateevent/{event_id}")

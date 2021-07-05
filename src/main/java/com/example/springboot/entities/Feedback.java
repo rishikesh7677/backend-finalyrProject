@@ -21,7 +21,7 @@ public class Feedback {
     @Column(name = "query_id")
     private int query_id;
     @Column(columnDefinition="text")
-    private  String cotent;
+    private  String content;
     private LocalDateTime created_at=LocalDateTime.now();
     @Column(columnDefinition = "text")
     private String response;

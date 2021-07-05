@@ -7,6 +7,7 @@ import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
@@ -14,7 +15,7 @@ import java.util.List;
 @Data
 @Getter
 @Setter
-public class User {
+public class User implements Serializable {
     @Id
     @GeneratedValue(generator = "uuid")
     @Column(name = "user_id")

@@ -6,6 +6,7 @@ import lombok.Setter;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 @Data
 @Getter
 @Setter
-public class PostModel {
+public class PostModel implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,6 +24,7 @@ public class PostModel {
     private String title;
     @Column(columnDefinition="text")
     private  String content;
+    @Column(columnDefinition="text")
     private String image;
     private ArrayList<String> comments;
     private  int likes;

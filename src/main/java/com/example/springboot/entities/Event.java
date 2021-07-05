@@ -27,11 +27,12 @@ public class Event {
     private String Description;
     //@Column(nullable = false)
     private  String Link;
+    @Column(columnDefinition="text")
     private  String image;
     private LocalDateTime eventdate;
     private  LocalDateTime created_at=LocalDateTime.now();
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "creator_id")
+    @JoinColumn(name = "creator_id", referencedColumnName = "email")
     private  User user;
     private int likecount;
     private Boolean Is_approved=false;
