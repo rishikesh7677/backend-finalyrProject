@@ -1,5 +1,2 @@
 
 
-# Adding test configuration
-test:
-  config: "${TEST_CONFIG:HU 19.1}"
