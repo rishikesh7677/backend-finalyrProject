@@ -44,7 +44,7 @@ public class EventService {
 
 
     public ArrayList<Event> getallevent() {
-        return (ArrayList<Event>) eventRepositary.findAllbyapp(Boolean.TRUE);
+        return (ArrayList<Event>) eventRepositary.findAll();
     }
 
     public String updateevent(Integer event_id, Event event) {

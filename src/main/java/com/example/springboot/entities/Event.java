@@ -42,8 +42,8 @@ public class Event {
 
     public Event(String title, String description, String link, String image, LocalDateTime eventdate, LocalDateTime created_at, User user, int likecount) {
         this.title = title;
-        Description = description;
-        Link = link;
+        this.Description = description;
+        this.Link = link;
         this.image = image;
         this.eventdate = eventdate;
         this.created_at = created_at;

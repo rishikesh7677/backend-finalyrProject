@@ -22,6 +22,7 @@ public class PostModel implements Serializable {
     @Column(name = "post_id")
     private int postid;
     private String title;
+    private String link;
     @Column(columnDefinition="text")
     private  String content;
     @Column(columnDefinition="text")
@@ -36,10 +37,11 @@ public class PostModel implements Serializable {
     public PostModel() {
     }
 
-    public PostModel(String title, String content, String image, ArrayList<String> comments, int likes, User user, LocalDateTime dateTime) {
+    public PostModel(String title, String content, String image, ArrayList<String> comments, int likes, User user, LocalDateTime dateTime, String link) {
         this.title = title;
         this.content = content;
         this.image = image;
+        this.link = link;
         this.comments = comments;
         this.likes = likes;
         this.user = user;

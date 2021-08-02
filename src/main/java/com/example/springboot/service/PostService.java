@@ -1,5 +1,6 @@
 package com.example.springboot.service;
 
+import com.example.springboot.entities.Event;
 import com.example.springboot.entities.PostModel;
 import com.example.springboot.entities.User;
 import com.example.springboot.repositary.PostRepositary;
@@ -49,7 +50,6 @@ public class PostService {
     }
 
     public ArrayList<PostModel> postmodel() {
-
-        return (ArrayList<PostModel>) postRepositary.findAllByapp(Boolean.TRUE);
+        return (ArrayList<PostModel>) postRepositary.findAll();
     }
 }

@@ -18,7 +18,7 @@ public class PostController {
 
 
     @PostMapping("/feed/post")
-    public MessageResponse postfeed(@RequestBody PostModel postModel){
+    public MessageResponse feedpost(@RequestBody PostModel postModel){
         return  new MessageResponse(postService.feedpost(postModel));
     }
 

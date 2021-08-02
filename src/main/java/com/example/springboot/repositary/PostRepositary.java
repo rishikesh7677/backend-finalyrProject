@@ -1,5 +1,6 @@
 package com.example.springboot.repositary;
 
+import com.example.springboot.entities.Event;
 import com.example.springboot.entities.PostModel;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

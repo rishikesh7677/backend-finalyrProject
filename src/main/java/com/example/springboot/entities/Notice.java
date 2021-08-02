@@ -23,16 +23,16 @@ public class Notice {
     private int id;
     private String title;
     @Column(columnDefinition="text")
-    private String description;
-    private String Source;
+    private String content;
+    private String link;
     private LocalDateTime Cdate=LocalDateTime.now();
 
     public Notice() {
     }
 
-    public Notice(String title, String description, String source) {
+    public Notice(String title, String content, String link) {
         this.title = title;
-        this.description = description;
-        Source = source;
+        this.content = content;
+        this.link = link;
     }
 }
