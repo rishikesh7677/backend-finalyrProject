@@ -318,3 +318,8 @@ Need to use a sample spring boot project. I would recommend using this project h
 Need to install maven before that [TM3]
 
 
+### ER Diagram
+
+<img src="./er_diagram.png" />
+
+
